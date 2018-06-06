@@ -1,0 +1,15 @@
+{
+  "name": "matrixreducer",
+  "version": "1.0.0",
+  "description": "Matrix reducing app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Michal Starski",
+  "license": "MIT",
+  "dependencies": {
+    "colors": "^1.3.0",
+    "readline-sync": "^1.4.9"
+  }
+}
