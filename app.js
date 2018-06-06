@@ -76,25 +76,20 @@ function completeReduce() {
   }
 }
 
-//Display Matrix
-function logMatrix(){
-
-}
-
 //Prompt 
 let rows, cols;
 
-const r = readlineSync.question('Rows: ');
+const r = readlineSync.question('Rows: '.green);
 rows = r;
 
-const c = readlineSync.question('Cols: ');
+const c = readlineSync.question('Cols: '.green);
 cols = c;
 
 //Ask for every matrix element
 for(let i = 0; i < rows; i++){
   let row = [];
   for(let j = 0; j < cols; j++){
-    const element = readlineSync.question(`Matrix[${i}][${j}]: `);
+    const element = readlineSync.question(`Matrix[${i}][${j}]: `.magenta);
     row.push(element);
   }
   matrix.push(row);
@@ -102,6 +97,7 @@ for(let i = 0; i < rows; i++){
 
 //Added arrow and initial matrix state
 console.log('\n');
+
 
 for(let row of matrix){
   console.log(row);
@@ -115,9 +111,17 @@ matrix.sort(matrixSort);
 //Reduce
 for (let n = 0; n < matrix.length; n++) reduce(n);
 
+for (let row of matrix) {
+  row = row.map(e => e.toPrecision(2));
+  console.log(row);
+}
+
 completeReduce();
 //Sort once again if all 0 rows are not at the bottom of the matrix
 matrix.sort();
+
+console.log('\n|'.red);
+console.log('V\n'.red);
 
 for (let row of matrix) {
   row = row.map(e => e.toPrecision(2));
